@@ -11,11 +11,11 @@
 
 1. Unzip the contents of the archive: AOS_project2_KiranGavali_final.zip
    It will create the following directories/files:
-   AOS/src: contains the source files
-   AOS/bin: contains the binaries
-   AOS/aos_project2_kxg121530.sh: Script to clear previous binaries and compile again
+   AOSCheckpointAndRecovery/src: contains the source files
+   AOSCheckpointAndRecovery/bin: contains the binaries
+   AOSCheckpointAndRecovery/aos_project2_kxg121530.sh: Script to clear previous binaries and compile again
 2. Execute the following commands:
-   cd AOS/
+   cd AOSCheckpointAndRecovery/
    chmod +x aos_project2_kxg121530.sh
    ./aos_project2_kxg121530.sh
 3. At this point, the new binaries should be placed in the bin folder.
@@ -25,9 +25,9 @@
 ***********************
 
 1. Make sure you are in the unzipped AOS directory.
-2. The default configuration file is in the AOS/src folder: AOS/src/config.txt
+2. The default configuration file is in the AOSCheckpointAndRecovery/src folder: AOSCheckpointAndRecovery/src/config.txt
 3. Make required modifications to the configuration file.
-4. cd to the bin folder: cd AOS/bin.
+4. cd to the bin folder: cd AOSCheckpointAndRecovery/bin.
 5. From the bin directory execute the following command:
    java startup.Node <NodeID> <Path of config file> <Path of directory where log is to be placed>
    Eg: java startup.Node 0 ../src/config.txt ./
@@ -84,4 +84,5 @@
 	Application Object: Z**ZL41T1N1
 	kiiranh@gavz:~/workspace/AOSCheckPointAndRecovery/bin$ 
 5. For all nodes i,j: LLR(j) at i <= LLS(i) at j
+6. Run: java common.Test <config file path>
 

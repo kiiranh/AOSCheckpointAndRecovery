@@ -11,10 +11,12 @@ if [ -d "src" ]; then
     fi
 
     # Files need to compiled in specific order
-    javac -cp src src/model/NodeInfo.java -d bin
     javac -cp src src/model/Message.java -d bin
     javac -cp src src/model/Connection.java -d bin
     javac -cp src src/model/AppState.java -d bin
+    javac -cp src src/common/Backoff.java -d bin
+    javac -cp src src/common/Utility.java -d bin
+    javac -cp src src/common/Test.java -d bin
     javac -cp src src/application/DistributedApplication.java -d bin
     javac -cp src src/service/KooToueg.java -d bin
     javac -cp src src/startup/Node.java -d bin

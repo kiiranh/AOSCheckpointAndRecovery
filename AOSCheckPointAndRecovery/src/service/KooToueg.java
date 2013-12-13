@@ -589,15 +589,16 @@ public class KooToueg extends Thread {
 		failedNeighbor = -1;
 
 		// Set current state to last permanent checkpoint (held in tentative cp)
-		if(tentativeCheckpoint != null){
+		if (tentativeCheckpoint != null) {
 			System.out
-			.println("\n[KOO TOUEG] ROLL BACK COMPLETE TO FOLLOWING STATE\n"
-					+ tentativeCheckpoint.toString());
+					.println("\n[KOO TOUEG] ROLL BACK COMPLETE TO FOLLOWING STATE\n"
+							+ tentativeCheckpoint.toString());
 			currentState = new AppState(connection.getNeighbors(),
 					tentativeCheckpoint.getStringObject());
 			tentativeCheckpoint = null;
-		}else{
-			System.out.println("\n[KOO TOUEG] NO NEED TO ROLLBACK..HENCE RECOVERY DONE");
+		} else {
+			System.out
+					.println("\n[KOO TOUEG] NO NEED TO ROLLBACK..HENCE RECOVERY DONE");
 		}
 		System.out.println("\n <<< SUCCESSFULLY RECOVERED >>>");
 
@@ -1067,9 +1068,10 @@ public class KooToueg extends Thread {
 				unfreezeReceive.await();
 			}
 
-			/*System.out.println("\n[KOO TOUEG] NODE " + myId
-					+ " RECEIVE UNFREEZED");
-			*/while (deliveredMessageQueue.peek() != null) {
+			/*
+			 * System.out.println("\n[KOO TOUEG] NODE " + myId +
+			 * " RECEIVE UNFREEZED");
+			 */while (deliveredMessageQueue.peek() != null) {
 				messages.add(deliveredMessageQueue.poll());
 			}
 		} catch (Exception e) {
